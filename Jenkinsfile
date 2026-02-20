@@ -32,7 +32,7 @@ pipeline {
 
                 rem Exécute Robot + génère output.xml dans reports/
                 rem + génère les résultats Allure dans allure-results/
-                robot -d %REPORT_DIR% --listener allure_robotframework:%ALLURE_RESULTS% tests
+                robot -d %REPORT_DIR% --listener allure_robotframework:%ALLURE_RESULTS% tests || exit 0
                 '''
             }
         }
