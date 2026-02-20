@@ -36,6 +36,13 @@ pipeline {
                 '''
             }
         }
+        stage('AI Analyze Results') {
+    steps {
+        bat '''
+        python ai\\analyze_robot_output.py
+        '''
+    }
+}
     }
 
     post {
