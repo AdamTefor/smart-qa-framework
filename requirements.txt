@@ -1,0 +1,4 @@
+robotframework==7.4
+robotframework-seleniumlibrary==6.3.0
+selenium==4.21.0
+allure-robotframework

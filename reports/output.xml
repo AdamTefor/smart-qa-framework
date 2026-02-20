@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.10.11 on win32)" generated="2026-02-19T22:12:23.755039" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\USER\Desktop\smart-qa-framework\tests">
+<suite id="s1-s1" name="Employee Tests" source="C:\Users\USER\Desktop\smart-qa-framework\tests\employee_tests.robot">
+<test id="s1-s1-t1" name="TC_EMP_01 — Ajouter un employé" line="12">
+<kw name="Open OrangeHRM" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:24.101573" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-19T22:12:24.101573" elapsed="3.721168"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-19T22:12:27.823749" elapsed="0.031831"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-02-19T22:12:27.855580" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:12:24.100572" elapsed="3.755008"/>
+</kw>
+<kw name="Login with" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:27.855580" elapsed="0.454022"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:28.311832" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<arg>${Input_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:28.311832" elapsed="0.120935"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:28.432767" elapsed="0.023321"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:28.456088" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>${Input_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:28.456088" elapsed="0.065958"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@type='submit']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:28.523816" elapsed="0.012464"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:28.537286" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${Button_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:28.537286" elapsed="0.068081"/>
+</kw>
+<arg>admin</arg>
+<arg>admin123</arg>
+<status status="PASS" start="2026-02-19T22:12:27.855580" elapsed="0.749787"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-19T22:12:28.605367" elapsed="1.713208"/>
+</kw>
+<kw name="Go to PIM Page" owner="pim_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PIM}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:30.319684" elapsed="0.015191"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:30.335312" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<arg>${PIM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:30.335312" elapsed="1.415754"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Click_Add}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:31.751066" elapsed="0.451282"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:32.203527" level="INFO">Clicking button '//button[normalize-space()="Add"]'.</msg>
+<arg>${Click_Add}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:32.202348" elapsed="0.881400"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:12:30.318575" elapsed="2.765752"/>
+</kw>
+<kw name="Add New Employee" owner="pim_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_NAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.084327" elapsed="0.462974"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:33.547301" level="INFO">Typing text 'Adam' into text field 'name=firstName'.</msg>
+<arg>${FIRST_NAME}</arg>
+<arg>${first.name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.547301" elapsed="0.121502"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LAST_NAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.670134" elapsed="0.018284"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:33.688927" level="INFO">Typing text 'Tefor' into text field 'name=lastName'.</msg>
+<arg>${LAST_NAME}</arg>
+<arg>${last.name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.688418" elapsed="0.067619"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMPLOYEE_ID}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.756037" elapsed="0.010755"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:33.766792" level="INFO">Typing text '1346' into text field '//label[text()="Employee Id"]/following::input[1]'.</msg>
+<arg>${EMPLOYEE_ID}</arg>
+<arg>${employee.id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.766792" elapsed="0.091633"/>
+</kw>
+<arg>Adam</arg>
+<arg>Tefor</arg>
+<arg>1346</arg>
+<status status="PASS" start="2026-02-19T22:12:33.084327" elapsed="0.774098"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-19T22:12:38.871703" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-19T22:12:33.858425" elapsed="5.013278"/>
+</kw>
+<kw name="Upload Employee Photo" owner="pim_page">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${UPLOAD_PHOTO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-19T22:12:38.874343" elapsed="0.034954"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:38.911329" level="INFO">Executing JavaScript:
+document.querySelector('input[type="file"]').style.display='block';
+Without any arguments.</msg>
+<arg>document.querySelector('input[type="file"]').style.display='block';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-02-19T22:12:38.911329" elapsed="0.010282"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:38.922628" level="INFO">Sending C:\Users\USER\Desktop\smart-qa-framework\data\image\Photo.jpg to browser.</msg>
+<arg>${UPLOAD_PHOTO}</arg>
+<arg>${photo.path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:38.921611" elapsed="0.035667"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SAVE_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:38.957278" elapsed="0.017460"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:38.975623" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${SAVE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:38.975261" elapsed="0.076232"/>
+</kw>
+<arg>C:/Users/USER/Desktop/smart-qa-framework/data/image/Photo.jpg</arg>
+<status status="PASS" start="2026-02-19T22:12:38.873792" elapsed="0.177701"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-19T22:12:44.061175" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-19T22:12:39.051493" elapsed="5.009682"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Personal Details</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-19T22:12:44.063306" elapsed="0.255432"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-19T22:12:49.326585" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-19T22:12:44.318738" elapsed="5.007847"/>
+</kw>
+<kw name="Close OrangeHRM" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-19T22:12:49.326585" elapsed="2.198235"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:12:49.326585" elapsed="2.198235"/>
+</kw>
+<tag>TF-4</tag>
+<status status="PASS" start="2026-02-19T22:12:24.099564" elapsed="27.425256"/>
+</test>
+<status status="PASS" start="2026-02-19T22:12:23.794490" elapsed="27.731688"/>
+</suite>
+<suite id="s1-s2" name="Login Tests" source="C:\Users\USER\Desktop\smart-qa-framework\tests\login_tests.robot">
+<test id="s1-s2-t1" name="TC_LOGIN_01 — Connexion valide" line="11">
+<kw name="Open OrangeHRM" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:51.537820" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-19T22:12:51.537820" elapsed="4.061204"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-19T22:12:55.599024" elapsed="0.029830"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-02-19T22:12:55.628854" elapsed="0.001968"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:12:51.537820" elapsed="4.093002"/>
+</kw>
+<kw name="Login with" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:55.630822" elapsed="0.459669"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:56.094386" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<arg>${Input_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:56.093832" elapsed="0.099895"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:56.194250" elapsed="0.021234"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:56.215484" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>${Input_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:56.215484" elapsed="0.069010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@type='submit']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:12:56.284494" elapsed="0.010165"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:12:56.294659" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${Button_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:12:56.294659" elapsed="0.086775"/>
+</kw>
+<arg>admin</arg>
+<arg>admin123</arg>
+<status status="PASS" start="2026-02-19T22:12:55.630822" elapsed="0.750612"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboar</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-19T22:12:56.382438" elapsed="1.774766"/>
+</kw>
+<kw name="Close OrangeHRM" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-19T22:12:58.158247" elapsed="2.201242"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:12:58.158247" elapsed="2.201242"/>
+</kw>
+<tag>TF-2</tag>
+<status status="PASS" start="2026-02-19T22:12:51.534633" elapsed="8.824856"/>
+</test>
+<test id="s1-s2-t2" name="TC_LOGIN_02 — Connexion invalide" line="16">
+<kw name="Open OrangeHRM" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:13:00.361846" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-19T22:13:00.361846" elapsed="4.817370"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.179216" elapsed="0.026375"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.206075" elapsed="0.002268"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:13:00.360759" elapsed="4.848127"/>
+</kw>
+<kw name="Login with" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.209397" elapsed="0.447210"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:13:05.660841" level="INFO">Typing text 'invalid_user' into text field 'name=username'.</msg>
+<arg>${Input_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.660841" elapsed="0.101043"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.761884" elapsed="0.022479"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:13:05.784363" level="INFO">Typing text 'invalid_pass' into text field 'name=password'.</msg>
+<arg>${Input_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.784363" elapsed="0.071783"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@type='submit']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.856146" elapsed="0.014889"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-19T22:13:05.872038" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${Button_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-19T22:13:05.872038" elapsed="1.009497"/>
+</kw>
+<arg>invalid_user</arg>
+<arg>invalid_pass</arg>
+<status status="PASS" start="2026-02-19T22:13:05.209397" elapsed="1.672138"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Invalid credentials</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-19T22:13:06.881535" elapsed="0.485174"/>
+</kw>
+<kw name="Close OrangeHRM" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-19T22:13:07.366709" elapsed="2.183603"/>
+</kw>
+<status status="PASS" start="2026-02-19T22:13:07.366709" elapsed="2.184459"/>
+</kw>
+<tag>TF-3</tag>
+<status status="PASS" start="2026-02-19T22:13:00.360759" elapsed="9.190892"/>
+</test>
+<status status="PASS" start="2026-02-19T22:12:51.526178" elapsed="18.026488"/>
+</suite>
+<status status="PASS" start="2026-02-19T22:12:23.755039" elapsed="45.798623"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">TF-2</stat>
+<stat pass="1" fail="0" skip="0">TF-3</stat>
+<stat pass="1" fail="0" skip="0">TF-4</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="3" fail="0" skip="0">Tests</stat>
+<stat name="Employee Tests" id="s1-s1" pass="1" fail="0" skip="0">Tests.Employee Tests</stat>
+<stat name="Login Tests" id="s1-s2" pass="2" fail="0" skip="0">Tests.Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
