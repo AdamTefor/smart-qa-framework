@@ -25,17 +25,25 @@ pipeline {
         }
 
         stage('Run Robot Tests (with Allure)') {
-            steps {
-                bat '''
-                if not exist %REPORT_DIR% mkdir %REPORT_DIR%
-                if not exist %ALLURE_RESULTS% mkdir %ALLURE_RESULTS%
+    steps {
+        script {
+            def rc = bat(returnStatus: true, script: """
+                if not exist ${REPORT_DIR} mkdir ${REPORT_DIR}
+                if not exist ${ALLURE_RESULTS} mkdir ${ALLURE_RESULTS}
 
-                rem Exécute Robot + génère output.xml dans reports/
-                rem + génère les résultats Allure dans allure-results/
-                robot -d %REPORT_DIR% --listener allure_robotframework:%ALLURE_RESULTS% tests || exit 0
-                '''
+                robot -d ${REPORT_DIR} --listener allure_robotframework:${ALLURE_RESULTS} tests
+            """)
+
+            // rc = 0 si tout PASS, rc = 1 si au moins un FAIL
+            if (rc == 1) {
+                currentBuild.result = 'UNSTABLE'
+                echo "Robot tests have failures (exit code 1) -> marking build UNSTABLE."
+            } else if (rc != 0) {
+                error "Robot execution failed with exit code: ${rc}"
             }
         }
+    }
+}
         stage('AI Analyze Results') {
     steps {
         bat '''
