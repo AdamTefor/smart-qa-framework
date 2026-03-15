@@ -34,12 +34,24 @@ jobs:
             New-Item -ItemType Directory -Path "reports"
           }
 
-      - name: Lancer les tests Robot Framework
+      - name: Exécuter les tests Robot Framework
         run: |
           robot --outputdir reports tests/
+        continue-on-error: true
 
-      - name: Sauvegarder les rapports
+      - name: Sauvegarder les rapports Robot
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: robot-reports
           path: reports/
+
+      - name: Échouer la pipeline si les tests ont échoué
+        shell: powershell
+        run: |
+          if (Select-String -Path "reports\output.xml" -Pattern 'status="FAIL"') {
+            Write-Host "Des tests ont échoué."
+            exit 1
+          } else {
+            Write-Host "Tous les tests ont réussi."
+          }
