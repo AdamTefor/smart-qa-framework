@@ -19,6 +19,12 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Installer Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Vérifier Python
         run: python --version
 
@@ -28,8 +34,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Installer Allure
+        shell: powershell
         run: |
-          choco install allure-commandline -y
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+          iwr -useb get.scoop.sh | iex
+          scoop install allure
 
       - name: Créer le dossier reports
         shell: powershell
@@ -45,6 +54,7 @@ jobs:
 
       - name: Générer le rapport Allure
         if: always()
+        shell: powershell
         run: |
           allure generate allure-results --clean -o allure-report
 
