@@ -26,11 +26,6 @@ Add New Employee
     Wait Until Element Is Visible     ${EMPLOYEE_ID}      10s
     Input Text    ${EMPLOYEE_ID}    ${employee.id}
 
-Upload Employee Photo    
-    [Arguments]  ${photo.path}
-    Wait Until Page Contains Element    ${UPLOAD_PHOTO}    10s
-    Execute Javascript    document.querySelector('input[type="file"]').style.display='block';
-    Choose File    ${UPLOAD_PHOTO}    ${photo.path}
 
     Wait Until Element Is Visible     ${SAVE_BUTTON}      10s
     Click Button  ${SAVE_BUTTON}
