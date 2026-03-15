@@ -1,7 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
 
-
 *** Variables ***
 ${PIM}    //a[@href="/web/index.php/pim/viewPimModule"]
 ${FIRST_NAME}    name=firstName

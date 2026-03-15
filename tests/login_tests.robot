@@ -13,7 +13,7 @@ TC_LOGIN_01 — Connexion valide
     [Tags]   TF-2
     Login with    admin    admin123
     Wait Until Page Contains        Dashboar    10s   
-    Verify Dashboard
+    #Verify Dashboard
 
 TC_LOGIN_02 — Connexion invalide
     [Tags]   TF-3

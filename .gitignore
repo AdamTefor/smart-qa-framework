@@ -1,0 +1,8 @@
+auto-venv/
+venv/
+__pycache__/
+*.pyc
+reports/
+log.html
+report.html
+output.xml
