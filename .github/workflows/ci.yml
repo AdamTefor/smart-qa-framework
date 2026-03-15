@@ -25,15 +25,20 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Vérifier Python
         run: python --version
 
-      - name: Installer les dépendances
+      - name: Installer les dépendances Python
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Installer Google Chrome
+      - name: Installer Chrome
         uses: browser-actions/setup-chrome@v1
 
       - name: Installer ChromeDriver
@@ -43,10 +48,7 @@ jobs:
 
       - name: Installer Allure
         run: |
-          wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.34.1.zip
-          unzip allure-2.34.1.zip
-          sudo mv allure-2.34.1 /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          npm install -g allure
           allure --version
 
       - name: Créer les dossiers
